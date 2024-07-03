@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output">
+    <Member Name="AnalogInput" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">%</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="WRREC_Instance" Datatype="WRREC" Version="1.1">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="RDREC_Instance" Datatype="RDREC" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="WriteRecord" Datatype="Struct">
+      <Member Name="Static_1" Datatype="&quot;HEADER&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+        <Sections>
+          <Section Name="None">
+            <Member Name="REQ_REF" Datatype="Byte">
+              <StartValue>1</StartValue>
+            </Member>
+            <Member Name="REQ_ID" Datatype="Byte">
+              <StartValue>1</StartValue>
+            </Member>
+            <Member Name="AXIS" Datatype="Byte">
+              <StartValue>1</StartValue>
+            </Member>
+            <Member Name="NO_PARAM" Datatype="Byte">
+              <StartValue>1</StartValue>
+            </Member>
+          </Section>
+        </Sections>
+      </Member>
+      <Member Name="Static_2" Datatype="&quot;PARAMETERADDR&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+        <Sections>
+          <Section Name="None">
+            <Member Name="ATTRIBUTE" Datatype="Byte">
+              <StartValue>16</StartValue>
+            </Member>
+            <Member Name="NO_ELEM" Datatype="Byte">
+              <StartValue>1</StartValue>
+            </Member>
+            <Member Name="PARA_NO" Datatype="Word">
+              <StartValue>755</StartValue>
+            </Member>
+            <Member Name="SUBINDEX" Datatype="Word">
+              <StartValue>0</StartValue>
+            </Member>
+          </Section>
+        </Sections>
+      </Member>
+    </Member>
+    <Member Name="ReadRecord" Datatype="Struct">
+      <Member Name="data" Datatype="Array[0..5] of Byte" />
+      <Member Name="Value" Datatype="Real" />
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>G120 Comm</Name>
+      <Namespace />
+      <Number>5</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Clock_1Hz" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalConstant" UId="22">
+      <Constant Name="Drive_1~PROFINET_interface~Standard_telegram_1" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>47</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="WriteRecord" />
+      </Symbol>
+    </Access>
+    <Part Name="WRREC" Version="1.1" UId="25">
+      <Instance Scope="LocalVariable" UId="26">
+        <Component Name="WRREC_Instance" />
+      </Instance>
+      <TemplateValue Name="ptr_type" Type="Type">Variant</TemplateValue>
+      <TemplateValue Name="id_type" Type="Type">HW_IO</TemplateValue>
+      <TemplateValue Name="index_type" Type="Type">DInt</TemplateValue>
+      <TemplateValue Name="len_type" Type="Type">UInt</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="REQ" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="ID" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="INDEX" />
+    </Wire>
+    <Wire UId="36">
+      <OpenCon UId="27" />
+      <NameCon UId="25" Name="LEN" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="24" />
+      <NameCon UId="25" Name="RECORD" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="25" Name="DONE" />
+      <OpenCon UId="28" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="25" Name="BUSY" />
+      <OpenCon UId="29" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="25" Name="ERROR" />
+      <OpenCon UId="30" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="25" Name="STATUS" />
+      <OpenCon UId="31" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Clock_1Hz" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalConstant" UId="22">
+      <Constant Name="Drive_1~PROFINET_interface~Standard_telegram_1" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>47</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="ReadRecord" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="RDREC_Instance" />
+        <Component Name="VALID" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="ReadRecord" />
+        <Component Name="Value" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="AnalogInput" />
+      </Symbol>
+    </Access>
+    <Part Name="RDREC" Version="1.0" UId="28">
+      <Instance Scope="LocalVariable" UId="29">
+        <Component Name="RDREC_Instance" />
+      </Instance>
+      <TemplateValue Name="ptr_type" Type="Type">Variant</TemplateValue>
+      <TemplateValue Name="id_type" Type="Type">HW_IO</TemplateValue>
+      <TemplateValue Name="index_type" Type="Type">DInt</TemplateValue>
+      <TemplateValue Name="len_type" Type="Type">UInt</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="30" />
+    <Part Name="Move" UId="31" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="38">
+      <Powerrail />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="REQ" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="ID" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="INDEX" />
+    </Wire>
+    <Wire UId="42">
+      <OpenCon UId="32" />
+      <NameCon UId="28" Name="MLEN" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="RECORD" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="28" Name="eno" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="28" Name="VALID" />
+      <OpenCon UId="33" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="28" Name="BUSY" />
+      <OpenCon UId="34" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="28" Name="ERROR" />
+      <OpenCon UId="35" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="28" Name="STATUS" />
+      <OpenCon UId="36" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="28" Name="LEN" />
+      <OpenCon UId="37" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="31" Name="out1" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="D" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

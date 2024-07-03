@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Send_C_connect" Datatype="TCON_Param" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ID" Datatype="CONN_OUC">
+            <StartValue>100</StartValue>
+          </Member>
+          <Member Name="ACTIVE_EST" Datatype="Bool">
+            <StartValue>false</StartValue>
+          </Member>
+          <Member Name="LOCAL_TSAP_ID_LEN" Datatype="USInt">
+            <StartValue>2</StartValue>
+          </Member>
+          <Member Name="REM_STADDR_LEN" Datatype="USInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="REM_TSAP_ID_LEN" Datatype="USInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="LOCAL_TSAP_ID" Datatype="Array[1..16] of Byte">
+            <Subelement Path="1">
+              <StartValue>16#7</StartValue>
+            </Subelement>
+            <Subelement Path="2">
+              <StartValue>16#D1</StartValue>
+            </Subelement>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Rec_C_connect" Datatype="TCON_Param" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ID" Datatype="CONN_OUC">
+            <StartValue>101</StartValue>
+          </Member>
+          <Member Name="ACTIVE_EST" Datatype="Bool">
+            <StartValue>false</StartValue>
+          </Member>
+          <Member Name="LOCAL_TSAP_ID_LEN" Datatype="USInt">
+            <StartValue>2</StartValue>
+          </Member>
+          <Member Name="REM_SUBNET_ID_LEN" Datatype="USInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="REM_STADDR_LEN" Datatype="USInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="REM_TSAP_ID_LEN" Datatype="USInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="LOCAL_TSAP_ID" Datatype="Array[1..16] of Byte">
+            <Subelement Path="1">
+              <StartValue>16#7</StartValue>
+            </Subelement>
+            <Subelement Path="2">
+              <StartValue>16#D0</StartValue>
+            </Subelement>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>Connect_DB</Name>
+      <Namespace />
+      <Number>7</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>
