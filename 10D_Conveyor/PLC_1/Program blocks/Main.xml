@@ -77,7 +77,7 @@
     </Access>
     <Access Scope="GlobalVariable" UId="27">
       <Symbol>
-        <Component Name="POT2_Lower_1500" />
+        <Component Name="POT1_Upper_1500" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="28">
@@ -105,65 +105,127 @@
     </Access>
     <Access Scope="GlobalVariable" UId="32">
       <Symbol>
+        <Component Name="POT1_Upper__Real" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="POT2_Lower_1500" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1500.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="35">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="36">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="37">
+      <Symbol>
+        <Component Name="Tmp" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="38">
+      <Symbol>
         <Component Name="POT2_Lower_Real" />
       </Symbol>
     </Access>
-    <Part Name="SCALE" Version="1.1" UId="33" />
-    <Part Name="SCALE" Version="1.1" UId="34" />
+    <Part Name="SCALE" Version="1.1" UId="39" />
+    <Part Name="SCALE" Version="1.1" UId="40" />
+    <Part Name="SCALE" Version="1.1" UId="41" />
   </Parts>
   <Wires>
-    <Wire UId="35">
-      <Powerrail />
-      <NameCon UId="33" Name="en" />
-      <NameCon UId="34" Name="en" />
-    </Wire>
-    <Wire UId="36">
-      <IdentCon UId="21" />
-      <NameCon UId="33" Name="IN" />
-    </Wire>
-    <Wire UId="37">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="HI_LIM" />
-    </Wire>
-    <Wire UId="38">
-      <IdentCon UId="23" />
-      <NameCon UId="33" Name="LO_LIM" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="24" />
-      <NameCon UId="33" Name="BIPOLAR" />
-    </Wire>
-    <Wire UId="40">
-      <NameCon UId="33" Name="RET_VAL" />
-      <IdentCon UId="25" />
-    </Wire>
-    <Wire UId="41">
-      <NameCon UId="33" Name="OUT" />
-      <IdentCon UId="26" />
-    </Wire>
     <Wire UId="42">
-      <IdentCon UId="27" />
-      <NameCon UId="34" Name="IN" />
+      <Powerrail />
+      <NameCon UId="39" Name="en" />
+      <NameCon UId="41" Name="en" />
     </Wire>
     <Wire UId="43">
-      <IdentCon UId="28" />
-      <NameCon UId="34" Name="HI_LIM" />
+      <IdentCon UId="21" />
+      <NameCon UId="39" Name="IN" />
     </Wire>
     <Wire UId="44">
-      <IdentCon UId="29" />
-      <NameCon UId="34" Name="LO_LIM" />
+      <IdentCon UId="22" />
+      <NameCon UId="39" Name="HI_LIM" />
     </Wire>
     <Wire UId="45">
-      <IdentCon UId="30" />
-      <NameCon UId="34" Name="BIPOLAR" />
+      <IdentCon UId="23" />
+      <NameCon UId="39" Name="LO_LIM" />
     </Wire>
     <Wire UId="46">
-      <NameCon UId="34" Name="RET_VAL" />
-      <IdentCon UId="31" />
+      <IdentCon UId="24" />
+      <NameCon UId="39" Name="BIPOLAR" />
     </Wire>
     <Wire UId="47">
-      <NameCon UId="34" Name="OUT" />
+      <NameCon UId="39" Name="eno" />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="39" Name="RET_VAL" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="39" Name="OUT" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="27" />
+      <NameCon UId="40" Name="IN" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="28" />
+      <NameCon UId="40" Name="HI_LIM" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="29" />
+      <NameCon UId="40" Name="LO_LIM" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="BIPOLAR" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="40" Name="RET_VAL" />
+      <IdentCon UId="31" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="40" Name="OUT" />
       <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="33" />
+      <NameCon UId="41" Name="IN" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="34" />
+      <NameCon UId="41" Name="HI_LIM" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="35" />
+      <NameCon UId="41" Name="LO_LIM" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="36" />
+      <NameCon UId="41" Name="BIPOLAR" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="RET_VAL" />
+      <IdentCon UId="37" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="OUT" />
+      <IdentCon UId="38" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
